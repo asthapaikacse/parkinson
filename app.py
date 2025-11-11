@@ -358,7 +358,7 @@ def main():
         })
         
         try:
-            for col in ['EducationLevel', 'Ethnicity']:
+            for col in ["UPDRS",'EducationLevel', 'Ethnicity']:
                 if col not in input_data.columns:
                     input_data[col] = 0
             # Apply feature engineering
