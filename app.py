@@ -229,15 +229,15 @@ def main():
         **Training Date:** {metadata['training_date']}
         """)
         
-        st.header("ℹ️ About")
-        st.write("""
-        This AI-powered system predicts Parkinson's Disease risk 
-        and estimates severity based on clinical and demographic data.
+        # st.header("ℹ️ About")
+        # st.write("""
+        # This AI-powered system predicts Parkinson's Disease risk 
+        # and estimates severity based on clinical and demographic data.
         
-        **Accuracy:** 90%+
+        # **Accuracy:** 90%+
         
-        **Features Used:** 40+ engineered features
-        """)
+        # **Features Used:** 40+ engineered features
+        # """)
     
     # Main content
     st.markdown("### 📝 Enter Patient Information")
