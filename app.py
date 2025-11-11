@@ -251,12 +251,8 @@ def main():
         with col1:
             age = st.number_input("Age", min_value=50, max_value=90, value=65, help="Patient's age in years")
             gender = st.selectbox("Gender", options=[0, 1], format_func=lambda x: "Male" if x == 0 else "Female")
-            ethnicity = st.selectbox("Ethnicity", options=[0, 1, 2, 3], 
-                                    format_func=lambda x: ["Caucasian", "African American", "Asian", "Other"][x])
-        
+            
         with col2:
-            education = st.selectbox("Education Level", options=[0, 1, 2, 3],
-                                    format_func=lambda x: ["None", "High School", "Bachelor's", "Higher"][x])
             bmi = st.number_input("BMI", min_value=15.0, max_value=40.0, value=25.0, step=0.1)
             smoking = st.selectbox("Smoking", options=[0, 1], format_func=lambda x: "No" if x == 0 else "Yes")
         
@@ -331,8 +327,6 @@ def main():
         input_data = pd.DataFrame({
             'Age': [age],
             'Gender': [gender],
-            'Ethnicity': [ethnicity],
-            'EducationLevel': [education],
             'BMI': [bmi],
             'Smoking': [smoking],
             'AlcoholConsumption': [alcohol],
@@ -366,16 +360,16 @@ def main():
         try:
             # Apply feature engineering
             input_data_engineered = engineer_features(input_data)
-            
-            # Scale features
-            input_scaled = scaler.transform(input_data_engineered)
-            
-            # Select features
-            input_selected = selector.transform(input_scaled)
-            
-            # Make prediction
-            prediction = model.predict(input_selected)[0]
-            prediction_proba = model.predict_proba(input_selected)[0]
+
+            # ✅ Step 1: Apply feature selector first (ensure correct 40 features)
+            input_selected = selector.transform(input_data_engineered)
+
+            # ✅ Step 2: Scale only the selected features
+            input_scaled = scaler.transform(input_selected)
+
+            # ✅ Step 3: Predict
+            prediction = model.predict(input_scaled)[0]
+            prediction_proba = model.predict_proba(input_scaled)[0]
             
             # Display results
             st.markdown("---")
