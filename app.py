@@ -345,7 +345,7 @@ def main():
             'CholesterolLDL': [cholesterol_ldl],
             'CholesterolHDL': [cholesterol_hdl],
             'CholesterolTriglycerides': [cholesterol_triglycerides],
-            # 'UPDRS': [updrs],
+            'UPDRS': [updrs],
             'MoCA': [moca],
             'FunctionalAssessment': [functional_assessment],
             'Tremor': [int(tremor)],
