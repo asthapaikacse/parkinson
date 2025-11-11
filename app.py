@@ -55,8 +55,8 @@ st.markdown("""
         padding: 1.5rem;
         border-radius: 10px;
         margin: 1rem 0;
-        background-color: #fff3e0;
-        border: 2px solid #ff9800;
+        background-color: #00008B;
+        border: 2px solid #FFFFFF;
     }
     .info-box {
         padding: 1rem;
