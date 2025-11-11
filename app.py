@@ -358,6 +358,9 @@ def main():
         })
         
         try:
+            for col in ['EducationLevel', 'Ethnicity']:
+                if col not in input_data.columns:
+                    input_data[col] = 0
             # Apply feature engineering
             input_data_engineered = engineer_features(input_data)
 
