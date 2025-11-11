@@ -345,7 +345,7 @@ def main():
             'CholesterolLDL': [cholesterol_ldl],
             'CholesterolHDL': [cholesterol_hdl],
             'CholesterolTriglycerides': [cholesterol_triglycerides],
-            'UPDRS': [updrs],
+            # 'UPDRS': [updrs],
             'MoCA': [moca],
             'FunctionalAssessment': [functional_assessment],
             'Tremor': [int(tremor)],
@@ -364,8 +364,13 @@ def main():
             # Apply feature engineering
             input_data_engineered = engineer_features(input_data)
 
+            expected_features = selector.feature_names_in_
+            input_data_aligned = input_data_engineered.reindex(columns=expected_features, fill_value=0)
+
+            # Apply selector and scaler
+            input_selected = selector.transform(input_data_aligned)
             # ✅ Step 1: Apply feature selector first (ensure correct 40 features)
-            input_selected = selector.transform(input_data_engineered)
+            # input_selected = selector.transform(input_data_engineered)
 
             # ✅ Step 2: Scale only the selected features
             input_scaled = scaler.transform(input_selected)
