@@ -229,15 +229,15 @@ def main():
         **Training Date:** {metadata['training_date']}
         """)
         
-        # st.header("ℹ️ About")
-        # st.write("""
-        # This AI-powered system predicts Parkinson's Disease risk 
-        # and estimates severity based on clinical and demographic data.
+        st.header("ℹ️ About")
+        st.write("""
+        This AI-powered system predicts Parkinson's Disease risk 
+        and estimates severity based on clinical and demographic data.
         
-        # **Accuracy:** 90%+
+        **Accuracy:** 90%+
         
-        # **Features Used:** 40+ engineered features
-        # """)
+        **Features Used:** 40+ engineered features
+        """)
     
     # Main content
     st.markdown("### 📝 Enter Patient Information")
@@ -522,14 +522,14 @@ def main():
             
             # Disclaimer
             st.markdown("---")
-            st.markdown("""
-            <div class="info-box">
-            <strong>⚠️ Medical Disclaimer:</strong><br>
-            This prediction system is for informational purposes only and should not replace 
-            professional medical advice, diagnosis, or treatment. Always consult with a qualified 
-            healthcare provider for proper diagnosis and treatment recommendations.
-            </div>
-            """, unsafe_allow_html=True)
+            # st.markdown("""
+            # <div class="info-box">
+            # <strong>⚠️ Medical Disclaimer:</strong><br>
+            # This prediction system is for informational purposes only and should not replace 
+            # professional medical advice, diagnosis, or treatment. Always consult with a qualified 
+            # healthcare provider for proper diagnosis and treatment recommendations.
+            # </div>
+            # """, unsafe_allow_html=True)
             
             # Download report
             st.markdown("---")
