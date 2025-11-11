@@ -521,7 +521,7 @@ def main():
                 st.caption(f"Parkinson's: {prediction_proba[1]*100:.2f}%")
             
             # Disclaimer
-            st.markdown("---")
+            # st.markdown("---")
             # st.markdown("""
             # <div class="info-box">
             # <strong>⚠️ Medical Disclaimer:</strong><br>
